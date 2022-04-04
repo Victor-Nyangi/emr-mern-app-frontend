@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import {
-  editBilling,
-  fetchBilling,
-} from "../../redux/servicess/billing";
 import PageTitle from "../../components/PageTitle";
-import { connect } from "react-redux";
 
-const EditBilling = ({ editBilling, fetchBilling }) => {
+const EditBilling = () => {
   const [billingData, setBillingData] = useState({
     patient_name: "",
     service_charged: "",
@@ -30,27 +25,6 @@ const EditBilling = ({ editBilling, fetchBilling }) => {
   useEffect(() => {
     const handleAsync = async () => {
       if (billing_id) {
-        fetchBilling(billing_id, (response) => {
-          const { status } = response;
-
-          if (status === "success") {
-            const billing = response.data;
-            setBillingData({
-              patient_name: billing.patient_name,
-              service_charged: billing.service_charged,
-              explanation: billing.explanation,
-              amount: billing.amount,
-              updated_date: billing.updated_date,
-            });
-          } else {
-            setStatus("error");
-            setMessage(
-              response.message
-                ? response.message
-                : " Technical error ocurred , contact administrator."
-            );
-          }
-        });
       }
     };
     handleAsync();
@@ -66,11 +40,6 @@ const EditBilling = ({ editBilling, fetchBilling }) => {
     setStatus("success");
     setMessage("Editing billing , please wait.....");
 
-    editBilling(billing_id, billingData, (res) => {
-      const { status, message } = res;
-      setStatus(status);
-      setMessage(message);
-    });
 
     setTimeout(() => {
       clear();
@@ -190,13 +159,6 @@ const EditBilling = ({ editBilling, fetchBilling }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    editBilling: (data, onResponse) =>
-      dispatch(editBilling(data, onResponse)),
-    fetchBilling: (id, onResponse) =>
-      dispatch(fetchBilling(id, onResponse)),
-  };
-};
 
-export default connect(null, mapDispatchToProps)(EditBilling);
+
+export default EditBilling;

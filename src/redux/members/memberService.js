@@ -1,6 +1,5 @@
 import axios from 'axios';
-
-const API_URL = 'http://localhost:5000/api/v1/members'
+import { url } from '../api';
 
 const getMembers = async () => {
   // const config = {
@@ -8,17 +7,17 @@ const getMembers = async () => {
   //       Authorization: `Bearer ${token}`,
   //     },
   //   }
-  const response = await axios.get(API_URL);
+  const response = await axios.get(url + 'members');
   return response.data;
 };
  
 const createMember = async (member) => {
-  const response = await axios.post(API_URL, member);
+  const response = await axios.post(`${url}/members`, member);
   return response.data;
 };
 
 const editMember = async (id, member) => {
-  const response = await axios.patch(`${API_URL}/${id}`, member);
+  const response = await axios.patch(`${url}/members/${id}`, member);
   return response.data;
 };
 
@@ -28,12 +27,12 @@ const getMember = async (id) => {
   //       Authorization: `Bearer ${token}`,
   //     },
   //   }
-  const response = await axios.get(`${API_URL}/${id}`);
+  const response = await axios.get(`${url}/members/${id}`);
   return response.data;
 };
 
 const deleteMember = async (id) => {
-  const { data } = await axios.delete(`${API_URL}/${id}`);
+  const { data } = await axios.delete(`${url}/members/${id}`);
   return data;
 };
 

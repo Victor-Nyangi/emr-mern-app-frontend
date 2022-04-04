@@ -1,50 +1,38 @@
 import React, { useState, useEffect } from "react";
-import { fetchFinancials } from "../../redux/servicess/financial";
-import { connect } from "react-redux";
+import { getFinancials, reset } from "../../redux/financials/financialSlice";
 import SectionHeader from "../../components/SectionHeader";
-import Pagination from "../../components/Pagination";
+// import Pagination from "../../components/Pagination";
+import { useSelector, useDispatch } from "react-redux";
 import moment from 'moment'
 import { Link } from "react-router-dom";
 
-const Financials = ({ fetchFinancials }) => {
-  const [financials, setFinancials] = useState([]);
-  const [totalResults, setTotalResults] = useState(0);
-  const [pageTable, setPageTable] = useState(1);
-  const [message, setMessage] = useState("");
+const Financials = () => {
   const [status, setStatus] = useState("");
-
-  const resultsPerPage = 10;
+  
+  const dispatch = useDispatch();
+  const { financials, isLoading, isError, message } = useSelector(
+    (state) => state.financials
+  );
 
   useEffect(() => {
-    const handleAsync = async () => {
-      fetchFinancials((res) => {
-        const { message, status, data } = res;
+    if (isError) {
+      console.log(message);
+    }
 
-        if (status === "success") {
-          updateFinancials(data);
-          setTotalResults(data.length);
-        }
+    dispatch(getFinancials());
 
-        if (status === "error") {
-          setStatus("error");
-          setMessage(message);
-        }
-      });
+    return () => {
+      dispatch(reset());
     };
-    handleAsync();
-    // eslint-disable-next-line
-  }, []);
-
-  const updateFinancials = async (data) => {
-    setFinancials(
-      data.slice((pageTable - 1) * resultsPerPage, pageTable * resultsPerPage)
-    );
-  };
+  }, [isError, message, dispatch]);
 
   setTimeout(() => {
     setStatus("");
-    setMessage("");
   }, 2000);
+
+  if (isLoading) {
+    return <p>Loading</p>;
+  }
 
   return (
     <>
@@ -144,10 +132,5 @@ const Financials = ({ fetchFinancials }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchFinancials: (callbackfunction) =>
-      dispatch(fetchFinancials(callbackfunction)),
-  };
-};
-export default connect(null, mapDispatchToProps)(Financials);
+
+export default Financials;

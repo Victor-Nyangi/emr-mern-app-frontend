@@ -1,50 +1,36 @@
 import React, {useState, useEffect} from 'react'
-import { fetchVitals } from '../../redux/servicess/vital'
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
+import { getVitals, reset } from "../../redux/vitals/vitalSlice";
 import SectionHeader from '../../components/SectionHeader';
-import Pagination from '../../components/Pagination';
 import { Link } from 'react-router-dom';
 
 const Vitals = ({fetchVitals}) => {
-  const [vitals, setVitals] = useState([]);
-  const [totalResults, setTotalResults] = useState(0);
-  const [pageTable, setPageTable] = useState(1);
-  const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
-
-  const resultsPerPage = 10;
+  
+  const dispatch = useDispatch();
+  const { vitals, isLoading, isError, message } = useSelector(
+    (state) => state.vitals
+  );
 
   useEffect(() => {
-   const handleAsync = async () => {
-        fetchVitals((res) => {
-          const { message, status, data } = res;
+    if (isError) {
+      console.log(message);
+    }
 
-if(status === "success") {
-  updateVitals(data);
-  setTotalResults(data.length); 
-}
+    dispatch(getVitals());
 
-if (status === "error") {
-  setStatus("error");
-  setMessage(message);
-}
- 
-        })
-   }
-   handleAsync();
-    // eslint-disable-next-line
-  }, []);
-
-  const updateVitals = async (data) => {
-    setVitals(
-      data.slice((pageTable - 1) * resultsPerPage, pageTable * resultsPerPage)
-    );
-  };
+    return () => {
+      dispatch(reset());
+    };
+  }, [isError, message, dispatch]);
 
   setTimeout(() => {
     setStatus("");
-    setMessage("");
   }, 2000);
+
+  if (isLoading) {
+    return <p>Loading</p>;
+  }
 
   return (
     <>
@@ -152,16 +138,8 @@ if (status === "error") {
           </tbody>
         </table>
 </div>
-
-
     </>
   )
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchVitals: (callbackfunction) =>
-      dispatch(fetchVitals(callbackfunction))
-  };
-};
-export default connect(null, mapDispatchToProps)(Vitals);
+export default Vitals;

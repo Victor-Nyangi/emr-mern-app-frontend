@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import {
-  editDepartment,
-  fetchDepartment,
-} from "../../redux/servicess/department";
 import PageTitle from "../../components/PageTitle";
-import { connect } from "react-redux";
 
-const EditDepartment = ({ editDepartment, fetchDepartment }) => {
+const EditDepartment = () => {
   const [departmentData, setDepartmentData] = useState({
     name: "",
     description: "",
@@ -28,25 +23,7 @@ const EditDepartment = ({ editDepartment, fetchDepartment }) => {
   useEffect(() => {
     const handleAsync = async () => {
       if (department_id) {
-        fetchDepartment(department_id, (response) => {
-          const { status } = response;
 
-          if (status === "success") {
-            const department = response.data;
-            setDepartmentData({
-              name: department.name,
-              description: department.description,
-              updated_date: department.updated_date,
-            });
-          } else {
-            setStatus("error");
-            setMessage(
-              response.message
-                ? response.message
-                : " Technical error ocurred , contact administrator."
-            );
-          }
-        });
       }
     };
     handleAsync();
@@ -61,13 +38,7 @@ const EditDepartment = ({ editDepartment, fetchDepartment }) => {
     }));
     setStatus("success");
     setMessage("Editing department , please wait.....");
-
-    editDepartment(department_id, departmentData, (res) => {
-      const { status, message } = res;
-      setStatus(status);
-      setMessage(message);
-    });
-
+    
     setTimeout(() => {
       clear();
     }, 2000);
@@ -141,13 +112,5 @@ const EditDepartment = ({ editDepartment, fetchDepartment }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    editDepartment: (data, onResponse) =>
-      dispatch(editDepartment(data, onResponse)),
-    fetchDepartment: (id, onResponse) =>
-      dispatch(fetchDepartment(id, onResponse)),
-  };
-};
 
-export default connect(null, mapDispatchToProps)(EditDepartment);
+export default EditDepartment;

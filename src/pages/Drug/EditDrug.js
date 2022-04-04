@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import {
-  editDrug,
-  fetchDrug,
-} from "../../redux/servicess/drug";
 import PageTitle from "../../components/PageTitle";
-import { connect } from "react-redux";
 
-const EditDrug = ({ editDrug, fetchDrug }) => {
+const EditDrug = () => {
   const [drugData, setDrugData] = useState({
     name: "",
     description: "",
@@ -30,27 +25,7 @@ const EditDrug = ({ editDrug, fetchDrug }) => {
   useEffect(() => {
     const handleAsync = async () => {
       if (drug_id) {
-        fetchDrug(drug_id, (response) => {
-          const { status } = response;
 
-          if (status === "success") {
-            const drug = response.data;
-            setDrugData({
-              name: drug.name,
-              description: drug.description,
-              manufacter_date: "",
-              expiry_date: "",
-              updated_date: drug.updated_date,
-            });
-          } else {
-            setStatus("error");
-            setMessage(
-              response.message
-                ? response.message
-                : " Technical error ocurred , contact administrator."
-            );
-          }
-        });
       }
     };
     handleAsync();
@@ -65,12 +40,6 @@ const EditDrug = ({ editDrug, fetchDrug }) => {
     }));
     setStatus("success");
     setMessage("Editing drug , please wait.....");
-
-    editDrug(drug_id, drugData, (res) => {
-      const { status, message } = res;
-      setStatus(status);
-      setMessage(message);
-    });
 
     setTimeout(() => {
       clear();
@@ -189,13 +158,6 @@ const EditDrug = ({ editDrug, fetchDrug }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    editDrug: (data, onResponse) =>
-      dispatch(editDrug(data, onResponse)),
-    fetchDrug: (id, onResponse) =>
-      dispatch(fetchDrug(id, onResponse)),
-  };
-};
 
-export default connect(null, mapDispatchToProps)(EditDrug);
+
+export default EditDrug;

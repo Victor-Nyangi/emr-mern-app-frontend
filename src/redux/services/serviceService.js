@@ -1,24 +1,23 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/v1/services'
-
+import { url } from '../api';
 const getServices = async () => {
   // const config = {
   //     headers: {
   //       Authorization: `Bearer ${token}`,
   //     },
   //   }
-  const response = await axios.get(API_URL);
+  const response = await axios.get(url + 'services');
   return response.data;
 };
  
 const createService = async (service) => {
-  const response = await axios.post(API_URL, service);
+  const response = await axios.post(`${url}/services`, service);
   return response.data;
 };
 
 const editService = async (id, service) => {
-  const response = await axios.patch(`${API_URL}/${id}`, service);
+  const response = await axios.patch(`${url}/services/${id}`, service);
   return response.data;
 };
 
@@ -28,12 +27,12 @@ const getService = async (id) => {
   //       Authorization: `Bearer ${token}`,
   //     },
   //   }
-  const response = await axios.get(`${API_URL}/${id}`);
+  const response = await axios.get(`${url}/services/${id}`);
   return response.data;
 };
 
 const deleteService = async (id) => {
-  const { data } = await axios.delete(`${API_URL}/${id}`);
+  const { data } = await axios.delete(`${url}/services/${id}`);
   return data;
 };
 

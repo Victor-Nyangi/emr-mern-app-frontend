@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import { editVital, fetchVital } from "../../redux/servicess/vital";
 import PageTitle from "../../components/PageTitle";
-import { connect } from "react-redux";
 
-const EditVital = ({ editVital, fetchVital }) => {
+const EditVital = () => {
   const [vitalData, setVitalData] = useState({
     patient_name: "",
     body_temperature: 0,
@@ -31,31 +29,8 @@ const EditVital = ({ editVital, fetchVital }) => {
   useEffect(() => {
     const handleAsync = async () => {
       if (vital_id) {
-        fetchVital(vital_id, (response) => {
-          const { status } = response;
-
-          if (status === "success") {
-            const vital = response.data;
-            setVitalData({
-              patient_name: vital.patient_name,
-              body_temperature: vital.body_temperature,
-              pulse_rate: vital.pulse_rate,
-              respiration_rate: vital.respiration_rate,
-              blood_pressure: vital.blood_pressure,
-              overall_status: vital.overall_status,
-              weight: vital.weight,
-              blood_glucose: vital.blood_glucose,
-              updated_date: Date.now,
-            });
-          } else {
-            setStatus("error");
-            setMessage(
-              response.message
-                ? response.message
-                : " Technical error ocurred , contact administrator."
-            );
-          }
-        });
+  
+       
       }
     };
     handleAsync();
@@ -70,12 +45,6 @@ const EditVital = ({ editVital, fetchVital }) => {
     }));
     setStatus("success");
     setMessage("Editing vital, please wait.....");
-
-    editVital(vital_id, vitalData, (res) => {
-      const { status, message } = res;
-      setStatus(status);
-      setMessage(message);
-    });
 
     setTimeout(() => {
       clear();
@@ -306,11 +275,6 @@ const EditVital = ({ editVital, fetchVital }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    editVital: (data, onResponse) => dispatch(editVital(data, onResponse)),
-    fetchVital: (id, onResponse) => dispatch(fetchVital(id, onResponse)),
-  };
-};
 
-export default connect(null, mapDispatchToProps)(EditVital);
+
+export default EditVital;

@@ -1,50 +1,38 @@
 import React, { useState, useEffect } from "react";
-import { fetchMembers } from "../../redux/servicess/member";
-import { connect } from "react-redux";
-import Pagination from "../../components/Pagination";
+import { getMembers, reset } from "../../redux/members/memberSlice";
+import { useSelector, useDispatch } from "react-redux";
 import SectionHeader from "../../components/SectionHeader";
 import { Link } from "react-router-dom";
 import moment from "moment";
 
-const Members = ({ fetchMembers }) => {
-  const [members, setMembers] = useState([]);
-  const [totalResults, setTotalResults] = useState(0);
-  const [pageTable, setPageTable] = useState(1);
-  const [message, setMessage] = useState("");
+const Members = () => {
   const [status, setStatus] = useState("");
-
-  const resultsPerPage = 10;
+  
+  const dispatch = useDispatch();
+  const { members, isLoading, isError, message } = useSelector(
+    (state) => state.members
+  );
 
   useEffect(() => {
-    const handleAsync = async () => {
-      fetchMembers((res) => {
-        const { message, status, data } = res;
+    if (isError) {
+      console.log(message);
+    }
 
-        if (status === "success") {
-          updateMembers(data);
-          setTotalResults(data.length);
-        }
+    dispatch(getMembers());
 
-        if (status === "error") {
-          setStatus("error");
-          setMessage(message);
-        }
-      });
+    return () => {
+      dispatch(reset());
     };
-    handleAsync();
-    // eslint-disable-next-line
-  }, []);
-
-  const updateMembers = async (data) => {
-    setMembers(
-      data.slice((pageTable - 1) * resultsPerPage, pageTable * resultsPerPage)
-    );
-  };
+  }, [isError, message, dispatch]);
 
   setTimeout(() => {
     setStatus("");
-    setMessage("");
   }, 2000);
+
+  if (isLoading) {
+    return <p>Loading</p>;
+  }
+
 
   return (
     <>
@@ -149,10 +137,4 @@ const Members = ({ fetchMembers }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchMembers: (callbackfunction) =>
-      dispatch(fetchMembers(callbackfunction)),
-  };
-};
-export default connect(null, mapDispatchToProps)(Members);
+export default Members;

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import { connect } from 'react-redux';
 import {
   OutlineCogIcon,
   HeartIcon,
@@ -12,10 +11,10 @@ import {
   VideoIcon,
   TimeIcon,
 } from "../../assets/icons";
-import { fetchPatient } from '../../redux/api/patient';
+import { getPatient } from "../../redux/patients/patientSlice";
 import PageTitle from "../../components/PageTitle";
 
-const ViewPatient = ({ fetchPatient }) => {
+const ViewPatient = () => {
   let params = useParams();
 
   const patient_id = params.patient_id;
@@ -42,52 +41,12 @@ const ViewPatient = ({ fetchPatient }) => {
     is_active: false,
     updated_date: Date.now,
   });
-  const [message, setMessage] = useState("");
-  const [status, setStatus] = useState("");
 
-const clear = () => {
-  setStatus("");
-  setMessage("");
-};
 
 useEffect(() => {
   const handleAsync = async () => {
     if (patient_id) {
-      fetchPatient(patient_id, (response) => {
-        const { status } = response;
-
-          const patient = response;
-          console.log('res',response)
-          setPatient({
-            first_name: patient.first_name,
-            last_name: patient.last_name,
-            address: patient.address,
-            phone_number: patient.phone_number,
-            email: patient.email,
-            date_of_birth: patient.date_of_birth,
-            gender: patient.gender,
-            marital_status: patient.marital_status,
-            education_level: patient.education_level,
-            income_level: patient.income_level,
-            occupation: patient.occupation,
-            size_of_family: patient.size_of_family,
-            emergency_contact: patient.emergency_contact,
-            salutation: patient.salutation,
-            height: patient.height,
-            weight: patient.weight,
-            blood_group: patient.blood_group,
-            underlying_conditions: patient.underlying_conditions,
-            is_active: false,
-          });
-  
-          // setStatus("error");
-          // setMessage(
-          //   response.message
-          //     ? response.message
-          //     : " Technical error ocurred , contact administrator."
-          // );
-        
-      });
+      
     }
   };
   handleAsync();
@@ -223,10 +182,4 @@ useEffect(() => {
   )
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchPatient: (id, onResponse) => dispatch(fetchPatient(id, onResponse)),
-  };
-};
-
-export default connect(null, mapDispatchToProps)(ViewPatient);
+export default ViewPatient;

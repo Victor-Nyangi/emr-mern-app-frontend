@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import { editMember, fetchMember } from "../../redux/servicess/member";
 import PageTitle from "../../components/PageTitle";
-import { connect } from "react-redux";
 
-const EditMember = ({ editMember, fetchMember }) => {
+const EditMember = () => {
   const [memberData, setMemberData] = useState({
     first_name: "",
     last_name: "",
@@ -34,34 +32,7 @@ const EditMember = ({ editMember, fetchMember }) => {
   useEffect(() => {
     const handleAsync = async () => {
       if (member_id) {
-        fetchMember(member_id, (response) => {
-          const { status } = response;
 
-          if (status === "success") {
-            const member = response.data;
-            setMemberData({
-              first_name: member.first_name,
-              last_name: member.last_name,
-              date_of_birth: member.date_of_birth,
-              phone_number: member.phone_number,
-              email: member.email,
-              address: member.address,
-              gender: member.gender,
-              salutation: member.salutation,
-              department: member.department,
-              role: member.role,
-              is_active: false,
-              updated_date: Date.now,
-            });
-          } else {
-            setStatus("error");
-            setMessage(
-              response.message
-                ? response.message
-                : " Technical error ocurred , contact administrator."
-            );
-          }
-        });
       }
     };
     handleAsync();
@@ -76,12 +47,6 @@ const EditMember = ({ editMember, fetchMember }) => {
     }));
     setStatus("success");
     setMessage("Editing member, please wait.....");
-
-    editMember(member_id, memberData, (res) => {
-      const { status, message } = res;
-      setStatus(status);
-      setMessage(message);
-    });
 
     setTimeout(() => {
       clear();
@@ -354,11 +319,5 @@ const EditMember = ({ editMember, fetchMember }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    editMember: (data, onResponse) => dispatch(editMember(data, onResponse)),
-    fetchMember: (id, onResponse) => dispatch(fetchMember(id, onResponse)),
-  };
-};
 
-export default connect(null, mapDispatchToProps)(EditMember);
+export default EditMember;

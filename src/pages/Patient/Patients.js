@@ -1,50 +1,37 @@
 import React, { useState, useEffect } from "react";
-import { fetchPatients } from "../../redux/servicess/patient";
-import { connect } from "react-redux";
+import { getPatients, reset } from "../../redux/patients/patientSlice";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import Pagination from '../../components/Pagination'
 import SectionHeader from "../../components/SectionHeader";
 import moment from 'moment';
 
-const Patients = ({ fetchPatients }) => {
-  const [patients, setPatients] = useState([]);
-  const [totalResults, setTotalResults] = useState(0);
-  const [pageTable, setPageTable] = useState(1);
-  const [message, setMessage] = useState("");
+const Patients = () => {
   const [status, setStatus] = useState("");
+  
+  const dispatch = useDispatch();
+  const { patients, isLoading, isError, message } = useSelector(
+    (state) => state.patients
+  );
 
-  const resultsPerPage = 10;
- 
   useEffect(() => {
-    const handleAsync = async () => {
-      fetchPatients((res) => {
-        const { message, status, data } = res;
+    if (isError) {
+      console.log(message);
+    }
 
-        if (status === "success") {
-          updatePatients(data);
-          setTotalResults(data.length);
-        }
+    dispatch(getPatients());
 
-        if (status === "error") {
-          setStatus("error");
-          setMessage(message);
-        }
-      });
+    return () => {
+      dispatch(reset());
     };
-    handleAsync();
-    // eslint-disable-next-line
-  }, []);
-
-  const updatePatients = async (data) => {
-    setPatients(
-      data.slice((pageTable - 1) * resultsPerPage, pageTable * resultsPerPage)
-    );
-  };
+  }, [isError, message, dispatch]);
 
   setTimeout(() => {
     setStatus("");
-    setMessage("");
   }, 2000);
+
+  if (isLoading) {
+    return <p>Loading</p>;
+  }
 
   return (
     <>
@@ -152,10 +139,4 @@ const Patients = ({ fetchPatients }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchPatients: (callbackfunction) =>
-      dispatch(fetchPatients(callbackfunction)),
-  };
-};
-export default connect(null, mapDispatchToProps)(Patients);
+export default Patients;

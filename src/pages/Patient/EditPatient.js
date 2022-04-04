@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import { editPatient, fetchPatient } from "../../redux/servicess/patient";
 import PageTitle from "../../components/PageTitle";
 import { connect } from "react-redux";
  
@@ -546,11 +545,4 @@ const EditPatient = ({ editPatient, fetchPatient }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    editPatient: (data, onResponse) => dispatch(editPatient(data, onResponse)),
-    fetchPatient: (id, onResponse) => dispatch(fetchPatient(id, onResponse)),
-  };
-};
-
-export default connect(null, mapDispatchToProps)(EditPatient);
+export default EditPatient;

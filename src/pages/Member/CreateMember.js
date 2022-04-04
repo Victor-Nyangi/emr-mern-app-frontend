@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux'
-import { getDepartments, reset } from "../../redux/departments/departmentSlice";
+import { getMembers, reset } from "../../redux/members/memberSlice";
 
 import { createMember } from "../../redux/members/memberSlice";
 import PageTitle from "../../components/PageTitle";
@@ -16,15 +16,15 @@ const CreateMember = () => {
     address: "",
     gender: "",
     salutation: "",
-    department: "",
+    member: "",
     role: "",
     is_active: false,
     updated_date: Date.now,
   });
 
   const dispatch = useDispatch();
-  const { departments, isLoading, isError, message } = useSelector(
-    (state) => state.departments
+  const { members, isLoading, isError, message } = useSelector(
+    (state) => state.members
   );
 
   const [status, setStatus] = useState("");
@@ -38,7 +38,7 @@ const CreateMember = () => {
     //   navigate('/login')
     // }
 
-    dispatch(getDepartments());
+    dispatch(getMembers());
 
     return () => {
       dispatch(reset());
@@ -55,7 +55,7 @@ const CreateMember = () => {
       address: "",
       gender: "",
       salutation: "",
-      department: "",
+      member: "",
       role: "",
       is_active: false,
       updated_date: Date.now,
@@ -288,28 +288,28 @@ const CreateMember = () => {
 
               <div className="mb-6">
                 <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                  Department
+                  Member
                 </label>
 
                 <select
-name="department"
+name="member"
 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-id="department"
-value={memberData.department}
+id="member"
+value={memberData.member}
 onChange={(e) =>
   setMemberData({
     ...memberData,
-    department: e.target.value,
+    member: e.target.value,
   })
 }
 >
-<option value="">-- Select department --</option>
-{departments &&
-  departments.map((department, id) => (
+<option value="">-- Select member --</option>
+{members &&
+  members.map((member, id) => (
     <option
       key={id}
-      value={department.name}
-    >{department.name}</option>
+      value={member.name}
+    >{member.name}</option>
   ))}
 </select>
               </div>
