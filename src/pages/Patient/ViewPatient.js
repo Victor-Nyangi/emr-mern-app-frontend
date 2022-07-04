@@ -46,7 +46,7 @@ const ViewPatient = () => {
 useEffect(() => {
   const handleAsync = async () => {
     if (patient_id) {
-      
+
     }
   };
   handleAsync();
@@ -62,7 +62,7 @@ useEffect(() => {
           <button>Patients</button>
         </Link>
       </div>
-    
+
         {/* {status !== "" && <Alert status={status} message={message} />}  */}
         <section className="grid grid-cols-7 gap-3 mt-5">
     <div className="py-3 col-span-4 flex-col mx-8 transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg bg-white rounded-md">
@@ -79,7 +79,7 @@ useEffect(() => {
                   />
                   <span
                     aria-hidden="true"
-                    className="relative bottom-0 right-0 inline-block w-3 h-3 transform -translate-x-2 translate-y-7 bg-green-300 border-2 border-white rounded-full dark:border-gray-800"
+                    className="relative bottom-0 right-0 inline-block w-3 h-3 transform -translate-x-2 translate-y-7 bg-green-300 border-2 border-white rounded-full"
                   ></span>
                 </>
               </span>
@@ -125,7 +125,7 @@ useEffect(() => {
             </div>
             <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-4">
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          
+
                 <div className="pl-1 md:mr-1">
                 <div className="text-gray-600 text-xs font-medium flex items-center">
                 <HeartIcon className="w-5 h-5 mr-2" aria-hidden="true" /> Blood Pressure

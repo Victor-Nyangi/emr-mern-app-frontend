@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import NotFoundImage from "../assets/images/eight.svg"
 
 const NotFound = () => {
+  const a=8,b=9;
   return (
     <div className="bg-indigo-900 relative overflow-hidden h-screen">
       <img
@@ -17,6 +18,15 @@ const NotFound = () => {
           <h1 className="font-extrabold text-5xl text-center text-white leading-tight mt-4">
             You're alone here
           </h1>
+          <label htmlFor="username-input">Username</label>
+          <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Orange</li>
+      </ul>
+
+      <h1 data-testid="title">Hello</h1>
+      <span title="sum">{a+b}</span>
           <Link to="/">
           <h2>You may return</h2>
           </Link>

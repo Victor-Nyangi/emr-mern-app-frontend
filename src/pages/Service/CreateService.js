@@ -15,7 +15,7 @@ const CreateService = () => {
   });
 
   const dispatch = useDispatch()
- 
+
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
 
@@ -48,7 +48,7 @@ const CreateService = () => {
       [e.target.name]: e.target.value,
     }));
   };
- 
+
   return (
     <>
       <div className="flex justify-between">
@@ -60,16 +60,16 @@ const CreateService = () => {
       </div>
       <>
         {/* {status !== "" && <Alert status={status} message={message} />}  */}
-        <div className="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+        <div className="px-4 py-3 mb-8 bg-white rounded-lg shadow-md">
           <form action="post" onSubmit="">
             <div className="grid grid-cols-3 gap-6">
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Name
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="text"
                   id="name"
                   placeholder="Name"
@@ -81,12 +81,12 @@ const CreateService = () => {
                 />
               </div>
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Charge
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="number"
                   id="charge"
                   placeholder="Charge"
@@ -99,11 +99,11 @@ const CreateService = () => {
               </div>
             </div>
             <div className="mb-6">
-              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+              <label className="block mb-2 text-sm font-medium text-gray-900">
                 Main Purpose
               </label>
               <textarea
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 id="main_purpose"
                 name="main_purpose"
                 rows={3}
@@ -113,11 +113,11 @@ const CreateService = () => {
               ></textarea>
             </div>
             <div className="mb-6">
-              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+              <label className="block mb-2 text-sm font-medium text-gray-900">
                 Description
               </label>
               <textarea
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 id="description"
                 name="description"
                 rows={3}

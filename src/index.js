@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './index.css';
 import {
   BrowserRouter as Router
@@ -18,11 +19,14 @@ import reportWebVitals from './reportWebVitals';
 // const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
 
 ReactDOM.render(
+  <React.StrictMode>
   <Router>
   <Provider store={store}>
     <App />
   </Provider>
          </Router>
+  </React.StrictMode>
+
   ,
   document.getElementById('root')
 );

@@ -17,7 +17,7 @@ import {
 const Dashboard = () => {
   return (
     <>
-      <section className="grid grid-cols-7 gap-3 mt-5">
+      <section className="sm:grid sm:grid-cols-7 gap-3 mt-5">
         <div className="container col-span-3 flex-col mx-auto w-full items-center justify-center">
           <div className="py-5 mx-auto">
             <div className="relative flex items-center justify-between">
@@ -28,7 +28,7 @@ const Dashboard = () => {
                 <li className="flex items-center">
                   <span
                     aria-hidden="true"
-                    className="absolute ml-2 w-3 h-3 bg-red-600 border-2 border-white rounded-full dark:border-gray-800"
+                    className="absolute ml-2 w-3 h-3 bg-red-600 border-2 border-white rounded-full"
                   ></span>
 
                   <a
@@ -43,7 +43,7 @@ const Dashboard = () => {
                 <li className="flex items-center">
                   <span
                     aria-hidden="true"
-                    className="absolute ml-2 w-3 h-3 bg-green-600 border-2 border-white rounded-full dark:border-gray-800"
+                    className="absolute ml-2 w-3 h-3 bg-green-600 border-2 border-white rounded-full"
                   ></span>
 
                   <a
@@ -82,7 +82,7 @@ const Dashboard = () => {
           </div>
           <ul className="flex flex-col">
           <li className="border-gray-400 flex flex-row space-between mb-2">
-              <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-white dark:bg-gray-800 rounded-md flex flex-1 items-center p-4">
+              <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-white rounded-md flex flex-1 items-center p-4">
                 <span
                   aria-hidden="true"
                   className="w-3 h-3 bg-red-600 border-2 border-white rounded-full mr-4"
@@ -123,7 +123,7 @@ const Dashboard = () => {
               </div>
             </li>
             <li className="border-gray-400 flex flex-row space-between mb-2">
-              <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-white dark:bg-gray-800 rounded-md flex flex-1 items-center p-4">
+              <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-white rounded-md flex flex-1 items-center p-4">
                 <span
                   aria-hidden="true"
                   className="w-3 h-3 bg-red-600 border-2 border-white rounded-full mr-4"
@@ -164,7 +164,7 @@ const Dashboard = () => {
               </div>
             </li>
             <li className="border-gray-400 flex flex-row space-between mb-2">
-              <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-white dark:bg-gray-800 rounded-md flex flex-1 items-center p-4">
+              <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-white rounded-md flex flex-1 items-center p-4">
                 <span
                   aria-hidden="true"
                   className="w-3 h-3 bg-red-600 border-2 border-white rounded-full mr-4"
@@ -205,7 +205,7 @@ const Dashboard = () => {
               </div>
             </li>
             <li className="border-gray-400 flex flex-row space-between mb-2">
-              <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-white dark:bg-gray-800 rounded-md flex flex-1 items-center p-4">
+              <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-white rounded-md flex flex-1 items-center p-4">
                 <span
                   aria-hidden="true"
                   className="w-3 h-3 bg-gray-400 border-2 border-white rounded-full mr-4"
@@ -246,7 +246,7 @@ const Dashboard = () => {
               </div>
             </li>
             <li className="border-gray-400 flex flex-row space-between mb-2">
-              <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-white dark:bg-gray-800 rounded-md flex flex-1 items-center p-4">
+              <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-white rounded-md flex flex-1 items-center p-4">
                 <span
                   aria-hidden="true"
                   className="w-3 h-3 bg-green-400 border-2 border-white rounded-full mr-4"
@@ -292,7 +292,7 @@ const Dashboard = () => {
           </div>
           <ul className="flex flex-col">
           <li className="border-gray-400 flex flex-row space-between mb-2">
-              <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-white dark:bg-gray-800 rounded-md flex flex-1 items-center p-4">
+              <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-white rounded-md flex flex-1 items-center p-4">
                 <span
                   aria-hidden="true"
                   className="w-3 h-3 bg-red-600 border-2 border-white rounded-full mr-4"
@@ -333,7 +333,7 @@ const Dashboard = () => {
               </div>
             </li>
             <li className="border-gray-400 flex flex-row space-between mb-2">
-              <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-white dark:bg-gray-800 rounded-md flex flex-1 items-center p-4">
+              <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-white rounded-md flex flex-1 items-center p-4">
                 <span
                   aria-hidden="true"
                   className="w-3 h-3 bg-red-600 border-2 border-white rounded-full mr-4"
@@ -374,7 +374,7 @@ const Dashboard = () => {
               </div>
             </li>
             <li className="border-gray-400 flex flex-row space-between mb-2">
-              <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-white dark:bg-gray-800 rounded-md flex flex-1 items-center p-4">
+              <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-white rounded-md flex flex-1 items-center p-4">
                 <span
                   aria-hidden="true"
                   className="w-3 h-3 bg-gray-400 border-2 border-white rounded-full mr-4"
@@ -429,7 +429,7 @@ const Dashboard = () => {
                   />
                   <span
                     aria-hidden="true"
-                    className="relative bottom-0 right-0 inline-block w-3 h-3 transform -translate-x-2 translate-y-7 bg-green-300 border-2 border-white rounded-full dark:border-gray-800"
+                    className="relative bottom-0 right-0 inline-block w-3 h-3 transform -translate-x-2 translate-y-7 bg-green-300 border-2 border-white rounded-full"
                   ></span>
                 </>
               </span>
@@ -475,7 +475,7 @@ const Dashboard = () => {
             </div>
             <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-4">
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          
+
                 <div className="pl-1 md:mr-1">
                 <div className="text-gray-600 text-xs font-medium flex items-center">
                 <HeartIcon className="w-5 h-5 mr-2" aria-hidden="true" /> Blood Pressure
@@ -518,8 +518,8 @@ const Dashboard = () => {
             </div>
           </div>
           <div>
-            <div className="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
-              
+            <div className="min-w-0 p-4 bg-white rounded-lg shadow-xs">
+
               <Chart />
             </div>
           </div>

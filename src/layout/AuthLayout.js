@@ -60,16 +60,16 @@ const AuthLayout = () => {
     <>
       <Header />
       <div
-        className={`flex bg-gray-50 dark:bg-gray-900 overflow-hidden font-sans`}
+        className={`flex bg-gray-50 overflow-hidden font-sans`}
       >
         <Sidebar />
 
         <div className="flex flex-col flex-1 w-full">
           <main>
             <div className="container grid px-6 mx-auto">
-              <Suspense fallback={<ThemedSuspense />}>
-
                 <Routes>
+              {/* <Suspense fallback={<ThemedSuspense />}> */}
+
                   <Route path="" element={<Dashboard />}/>
                   <Route path="services" element={<Services />}/>
                   <Route path="/create/service" element={<CreateService />}/>
@@ -99,14 +99,13 @@ const AuthLayout = () => {
                   <Route path="/create/vital" element={<CreateVital />}/>
                   <Route path="/edit/vital/:vital_id" element={<EditVital />}/>
                   <Route path="*" element={<NotFound/>}/>
-                
-      
+
+
                   {/* <Redirect exact from="/app" to="/app/dashboard" /> */}
                   {/* <Route path="/not-found" element={<NotFound />} />
                  */}
-  
+
                 </Routes>
-              </Suspense>
             </div>
           </main>
         </div>

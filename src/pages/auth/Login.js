@@ -129,7 +129,7 @@ const Login = () => {
                 </a>
               </div>
               <div className="max-w-xl xl:px-8 xl:w-5/12 mb-6">
-                <div className="bg-white rounded shadow-2xl px-7 sm:p-10">
+                <div className="bg-white rounded shadow-2xl my-4 px-7 sm:p-10">
                   <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                     Sign in
                   </h3>

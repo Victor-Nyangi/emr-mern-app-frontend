@@ -11,11 +11,11 @@ import {
 
 const Sidebar = () => {
     return (
-        <aside className="z-30 flex-shrink-0 hidden w-50 bg-white dark:bg-gray-800 lg:block">
-        
+        <aside className="z-30 flex-shrink-0 hidden w-50 bg-white lg:block">
+
         <div className="h-full hidden lg:block my-4 shadow-lg relative w-60">
-            <div className="bg-white h-full rounded-2xl dark:bg-gray-700">
-    
+            <div className="bg-white h-full rounded-2xl">
+
               <nav className="mt-6">
                 <div>
                   <a
@@ -38,7 +38,7 @@ const Sidebar = () => {
                     <span className="mx-4 text-sm font-normal">
                       Patients
                     </span>
-  
+
                   </a>
                   <a
                     className="w-full text-dark flex items-center p-4 my-2 transition-colors duration-200 justify-start"
@@ -50,7 +50,7 @@ const Sidebar = () => {
                     <span className="mx-4 text-sm font-normal">
                       Vitals
                     </span>
-                 
+
                   </a>
                   <a
                     className="w-full text-dark flex items-center p-4 my-2 transition-colors duration-200 justify-start"
@@ -62,10 +62,10 @@ const Sidebar = () => {
                     <span className="mx-4 text-sm font-normal">
                       Services
                     </span>
-               
+
                   </a>
                   <a
-                    className="w-full text-dark dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
+                    className="w-full text-dark flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
                    href="/dashboard/departments"
                   >
                     <span className="text-left">
@@ -76,7 +76,7 @@ const Sidebar = () => {
                     </span>
                   </a>
                   <a
-                    className="w-full text-dark dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
+                    className="w-full text-dark flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
                    href="/dashboard/drugs"
                   >
                     <span className="text-left">
@@ -87,7 +87,7 @@ const Sidebar = () => {
                     </span>
                   </a>
                   <a
-                    className="w-full text-dark dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
+                    className="w-full text-dark flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
                    href="/dashboard/medical-staff"
                   >
                     <span className="text-left">
@@ -98,7 +98,7 @@ const Sidebar = () => {
                     </span>
                   </a>
                   <a
-                    className="w-full text-dark dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
+                    className="w-full text-dark flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
                    href="/dashboard/billings"
                   >
                     <span className="text-left">
@@ -124,7 +124,7 @@ const Sidebar = () => {
               ></span> */}
                   </a>
                   <a
-                    className="w-full text-gray-500 dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
+                    className="w-full text-gray-500 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
                     href="/"
                   >
                     <span className="text-left">
@@ -134,7 +134,7 @@ const Sidebar = () => {
                     <span className="mx-4 text-sm font-normal">Settings</span>
                   </a>
                   {/* <a
-                    className="w-full text-gray-500 dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
+                    className="w-full text-gray-500 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
                     href="/"
                   >
                     <span className="text-left">

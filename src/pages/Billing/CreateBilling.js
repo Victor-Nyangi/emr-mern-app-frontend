@@ -6,7 +6,7 @@ import { getPatients, reset } from "../../redux/patients/patientSlice";
 import { getServices } from "../../redux/services/serviceSlice";
 
 import PageTitle from "../../components/PageTitle";
- 
+
 const CreateBilling = () => {
   const [billingData, setBillingData] = useState({
     patient_name: "",
@@ -84,17 +84,17 @@ const CreateBilling = () => {
       </div>
       <>
         {/* {status !== "" && <Alert status={status} message={message} />}  */}
-        <div className="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+        <div className="px-4 py-3 mb-8 bg-white rounded-lg shadow-md">
           <form action="post" onSubmit="">
             <div className="grid grid-cols-3 gap-6">
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Patient Name
                 </label>
 
                 <select
                   name="patient_name"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   id="patient_name"
                   onChange={(e) =>
                     setBillingData({
@@ -114,12 +114,12 @@ const CreateBilling = () => {
                 </select>
               </div>
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Service
                 </label>
               <select
                   name="service_charged"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   id="service_charged"
                   onChange={(e) =>
                     setBillingData({
@@ -139,12 +139,12 @@ const CreateBilling = () => {
                 </select>
                 </div>
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Amount
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="number"
                   id="amount"
                   placeholder="Amount"
@@ -161,11 +161,11 @@ const CreateBilling = () => {
               </div>
             </div>
             <div className="mb-6">
-              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+              <label className="block mb-2 text-sm font-medium text-gray-900">
                 Explanation
               </label>
               <textarea
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 id="explanation"
                 name="explanation"
                 rows={3}

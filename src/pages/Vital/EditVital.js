@@ -29,8 +29,8 @@ const EditVital = () => {
   useEffect(() => {
     const handleAsync = async () => {
       if (vital_id) {
-  
-       
+
+
       }
     };
     handleAsync();
@@ -62,16 +62,16 @@ const EditVital = () => {
       </div>
       <>
         {/* {status !== "" && <Alert status={status} message={message} />}  */}
-        <div className="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+        <div className="px-4 py-3 mb-8 bg-white rounded-lg shadow-md">
           <form action="post" onSubmit="">
             <div className="grid grid-cols-3 gap-6">
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Patient Name
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="text"
                   id="patient_name"
                   placeholder="Patient name"
@@ -88,12 +88,12 @@ const EditVital = () => {
               </div>
 
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Body Temperture
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="number"
                   id="body_temperature"
                   placeholder="Body Temperture"
@@ -110,12 +110,12 @@ const EditVital = () => {
               </div>
 
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Pulse Rate
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="text"
                   id="pulse_rate"
                   placeholder="Pulse Rate"
@@ -131,12 +131,12 @@ const EditVital = () => {
                 />
               </div>
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Respiration Rrate
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="string"
                   id="respiration_rate"
                   placeholder="Respiration Rate"
@@ -152,12 +152,12 @@ const EditVital = () => {
                 />
               </div>
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Blood Pressure
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="text"
                   id="blood_pressure"
                   placeholder="Address"
@@ -173,12 +173,12 @@ const EditVital = () => {
                 />
               </div>
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Overall Status
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="text"
                   placeholder="Overall Status"
                   autoComplete="off"
@@ -195,12 +195,12 @@ const EditVital = () => {
               </div>
 
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Weight
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="number"
                   placeholder="Weight"
                   autoComplete="off"
@@ -217,12 +217,12 @@ const EditVital = () => {
               </div>
 
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Blood Glucose
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="text"
                   placeholder="Blood Glucose"
                   autoComplete="off"
@@ -239,13 +239,13 @@ const EditVital = () => {
               </div>
 
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Health Status
                 </label>
 
                 <select
                   name="health_status"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   id="health_status"
                   onChange={(e) =>
                     setVitalData({

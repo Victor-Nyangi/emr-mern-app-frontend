@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 
 import PageTitle from "../../components/PageTitle";
 import { connect } from "react-redux";
- 
+
 const EditPatient = ({ editPatient, fetchPatient }) => {
   const [patientData, setPatientData] = useState({
     first_name: "",
@@ -113,16 +113,16 @@ const EditPatient = ({ editPatient, fetchPatient }) => {
       </div>
       <>
         {/* {status !== "" && <Alert status={status} message={message} />}  */}
-        <div className="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+        <div className="px-4 py-3 mb-8 bg-white rounded-lg shadow-md">
           <form action="post" onSubmit="">
             <div className="grid grid-cols-3 gap-6">
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   First Name
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="text"
                   id="first_name"
                   placeholder="First name"
@@ -139,12 +139,12 @@ const EditPatient = ({ editPatient, fetchPatient }) => {
               </div>
 
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Last Name
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="text"
                   id="last_name"
                   placeholder="Last name"
@@ -161,12 +161,12 @@ const EditPatient = ({ editPatient, fetchPatient }) => {
               </div>
 
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Date of Birth
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="date"
                   id="date_of_birth"
                   placeholder="Date"
@@ -182,12 +182,12 @@ const EditPatient = ({ editPatient, fetchPatient }) => {
                 />
               </div>
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Phone Number
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="text"
                   id="phone_number"
                   placeholder="Phone Number"
@@ -203,12 +203,12 @@ const EditPatient = ({ editPatient, fetchPatient }) => {
                 />
               </div>
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Email
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="email"
                   id="email"
                   placeholder="Email"
@@ -224,12 +224,12 @@ const EditPatient = ({ editPatient, fetchPatient }) => {
                 />
               </div>
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Address
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="text"
                   id="address"
                   placeholder="Address"
@@ -245,12 +245,12 @@ const EditPatient = ({ editPatient, fetchPatient }) => {
                 />
               </div>
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Gender
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="text"
                   placeholder="Gender"
                   autoComplete="off"
@@ -267,13 +267,13 @@ const EditPatient = ({ editPatient, fetchPatient }) => {
               </div>
 
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Marital Status
                 </label>
 
                 <select
                   name="marital_status"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   id="marital_status"
                   onChange={(e) =>
                     setPatientData({
@@ -290,13 +290,13 @@ const EditPatient = ({ editPatient, fetchPatient }) => {
               </div>
 
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Education Level
                 </label>
 
                 <select
                   name="education_level"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   id="education_level"
                   onChange={(e) =>
                     setPatientData({
@@ -313,13 +313,13 @@ const EditPatient = ({ editPatient, fetchPatient }) => {
               </div>
 
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Income Level
                 </label>
 
                 <select
                   name="income_level"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   id="income_level"
                   onChange={(e) =>
                     setPatientData({
@@ -337,12 +337,12 @@ const EditPatient = ({ editPatient, fetchPatient }) => {
               </div>
 
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Occupation
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="text"
                   placeholder="Occupation"
                   autoComplete="off"
@@ -359,12 +359,12 @@ const EditPatient = ({ editPatient, fetchPatient }) => {
               </div>
 
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Size of Family
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="number"
                   placeholder="Size of Family"
                   autoComplete="off"
@@ -381,12 +381,12 @@ const EditPatient = ({ editPatient, fetchPatient }) => {
               </div>
 
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Emergency Contact
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="text"
                   placeholder="Emergency Contact"
                   autoComplete="off"
@@ -403,12 +403,12 @@ const EditPatient = ({ editPatient, fetchPatient }) => {
               </div>
 
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Salutation
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="text"
                   placeholder="Salutation"
                   autoComplete="off"
@@ -425,12 +425,12 @@ const EditPatient = ({ editPatient, fetchPatient }) => {
               </div>
 
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Height
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="number"
                   placeholder="Height"
                   autoComplete="off"
@@ -447,12 +447,12 @@ const EditPatient = ({ editPatient, fetchPatient }) => {
               </div>
 
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Weight
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="number"
                   placeholder="Weight"
                   autoComplete="off"
@@ -469,12 +469,12 @@ const EditPatient = ({ editPatient, fetchPatient }) => {
               </div>
 
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Blood Group
                 </label>
 
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   type="text"
                   placeholder="Blood Group"
                   autoComplete="off"
@@ -491,13 +491,13 @@ const EditPatient = ({ editPatient, fetchPatient }) => {
               </div>
 
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Active
                 </label>
 
                 <select
                   name="is_active"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   id="is_active"
                   onChange={(e) =>
                     setPatientData({
@@ -512,12 +512,12 @@ const EditPatient = ({ editPatient, fetchPatient }) => {
               </div>
             </div>
             <div className="mb-6">
-              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+              <label className="block mb-2 text-sm font-medium text-gray-900">
                 Blood Group (Separate values by commas)
               </label>
 
               <textarea
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 id="underlying_conditions"
                 name="underlying_conditions"
                 rows={3}
