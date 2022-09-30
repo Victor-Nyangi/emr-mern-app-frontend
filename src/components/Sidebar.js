@@ -11,9 +11,9 @@ import {
 
 const Sidebar = () => {
     return (
-        <aside className="z-30 flex-shrink-0 hidden w-50 bg-white">
+        <aside className="z-30 flex-shrink-0 hidden w-50 bg-white lg:block">
 
-        <div className="h-full hidden my-4 shadow-lg relative w-60">
+        <div className="h-full hidden lg:block my-4 shadow-lg relative w-60">
             <div className="bg-white h-full rounded-2xl">
 
               <nav className="mt-6">
