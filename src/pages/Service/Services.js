@@ -75,7 +75,7 @@ const Services = () => {
   if (isLoading) {
     return <p>Loading</p>;
   }
- 
+
   return (
     <>
       <SectionHeader
@@ -84,14 +84,14 @@ const Services = () => {
         data_title={"services"}
       />
 
-      <ul className="bg-slate-50 p-4 sm:px-8 sm:pt-6 sm:pb-8 lg:p-4 xl:px-8 xl:pt-6 xl:pb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 text-sm leading-6">
+      <ul className="bg-slate-50 p-4 sm:px-8 sm:pt-6 sm:pb-8 xl:px-8 xl:pt-6 xl:pb-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 gap-4 text-sm leading-6">
         {services &&
           services.map((service) => (
             <li
               key={service._id}
               className="hover:bg-gray-100 hover:ring-gray-100 hover:shadow-md group rounded-md p-3 bg-white ring-1 ring-slate-200 shadow-sm"
             >
-              <dl className="grid sm:block lg:grid xl:block grid-cols-2 grid-rows-2 items-center">
+              <dl className="grid sm:block xl:block grid-cols-2 grid-rows-2 items-center">
                 <div className="flex items-center justify-between">
                   <div>
                     <dt className="sr-only">Title</dt>

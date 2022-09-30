@@ -473,8 +473,8 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-4">
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full md:px-24">
+              <div className="grid gap-4 sm:grid-cols-2">
 
                 <div className="pl-1 md:mr-1">
                 <div className="text-gray-600 text-xs font-medium flex items-center">

@@ -76,8 +76,8 @@ const Register = () => {
           alt=""
         />
         <div className="relative bg-gray-900 bg-opacity-75">
-          <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-            <div className="relative flex grid items-center grid-cols-2 lg:grid-cols-3">
+          <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full md:px-24">
+            <div className="relative flex grid items-center grid-cols-2">
               <a
                 href="/"
                 aria-label="Company"
@@ -106,7 +106,7 @@ const Register = () => {
             </div>
           </div>
 
-          <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+          <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full md:px-24">
             <div className="flex flex-col items-center justify-between xl:flex-row">
               <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
                 <h1 className="max-w-lg mb-6 font-sans text-4xl  font-bold text-red-600 ">
@@ -214,7 +214,7 @@ const Register = () => {
                     </div>
                     <div className="mt-4 mb-2 sm:mb-4">
                       <Link to="!#"
-                        
+
                         className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-black hover:bg-purple-accent-700 focus:shadow-outline focus:outline-none"
                       >
                         Register

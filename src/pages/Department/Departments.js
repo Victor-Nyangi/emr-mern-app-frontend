@@ -49,14 +49,14 @@ const Departments = () => {
 
       <section>
   <SectionHeader title={"Department"} main_page={'department'} data_title={'departments'}/>
-        <ul className="bg-slate-50 p-4 sm:px-8 sm:pt-6 sm:pb-8 lg:p-4 xl:px-8 xl:pt-6 xl:pb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 text-sm leading-6">
+        <ul className="bg-slate-50 p-4 sm:px-8 sm:pt-6 sm:pb-8 xl:px-8 xl:pt-6 xl:pb-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 gap-4 text-sm leading-6">
           {departments &&
             departments.map((department) => (
               <li
                 key={department._id}
                 className="hover:bg-gray-100 hover:ring-gray-100 hover:shadow-md group rounded-md p-3 bg-white ring-1 ring-slate-200 shadow-sm"
               >
-                <dl className="grid sm:block lg:grid xl:block grid-cols-2 grid-rows-2 items-center">
+                <dl className="grid sm:block xl:block grid-cols-2 grid-rows-2 items-center">
                   <div className="flex items-center justify-between">
                     <div>
                       <dt className="sr-only">Title</dt>
@@ -79,11 +79,11 @@ const Departments = () => {
                       {department.description}
                     </dd>
                   </div>
-                  {/* <div className="col-start-2 row-start-1 row-end-3 sm:mt-4 lg:mt-0 xl:mt-4">
+                  {/* <div className="col-start-2 row-start-1 row-end-3 sm:mt-4 xl:mt-4">
                     <dt className="sr-only">Users</dt>
                     <dd
                       x-for="user in project.users"
-                      className="flex justify-end sm:justify-start lg:justify-end xl:justify-start -space-x-1.5"
+                      className="flex justify-end sm:justify-start xl:justify-start -space-x-1.5"
                     >
                       <img
                         src="user.avatar"
