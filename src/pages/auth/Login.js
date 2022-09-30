@@ -100,8 +100,8 @@ const Login = () => {
           </div>
 
           <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full md:px-24">
-            <div className="flex flex-col items-center justify-between xl:flex-row">
-              <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
+            <div className="flex flex-col items-center justify-between sm:flex-row">
+              <div className="w-full max-w-xl mb-12 sm:mb-0 sm:pr-16 sm:w-7/12">
                 <h1 className="max-w-lg mb-6 font-sans text-4xl  font-bold text-red-600 ">
                   Electonic
                   <br className="hidden md:block" />
@@ -128,7 +128,7 @@ const Login = () => {
                   </svg>
                 </a>
               </div>
-              <div className="max-w-xl xl:px-8 xl:w-5/12 mb-6">
+              <div className="max-w-xl sm:px-8 sm:w-5/12 mb-6">
                 <div className="bg-white rounded shadow-2xl my-4 px-7 sm:p-10">
                   <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                     Sign in
