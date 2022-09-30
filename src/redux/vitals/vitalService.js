@@ -36,7 +36,7 @@ const deleteVital = async (id) => {
   return data;
 };
 
-const vitalVital = {
+const vitalService = {
   createVital,
   getVitals,
   getVital,
@@ -44,4 +44,4 @@ const vitalVital = {
   deleteVital,
 };
 
-export default vitalVital;
+export default vitalService;

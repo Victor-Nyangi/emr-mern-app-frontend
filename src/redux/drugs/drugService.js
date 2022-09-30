@@ -37,7 +37,7 @@ const deleteDrug = async (id) => {
   return data;
 };
 
-const drugDrug = {
+const drugService = {
   createDrug,
   getDrugs,
   getDrug,
@@ -45,4 +45,4 @@ const drugDrug = {
   deleteDrug,
 };
 
-export default drugDrug;
+export default drugService;

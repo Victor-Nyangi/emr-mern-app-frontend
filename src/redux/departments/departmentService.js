@@ -37,7 +37,7 @@ const deleteDepartment = async (id) => {
   return data;
 };
 
-const departmentDepartment = {
+const departmentService = {
   createDepartment,
   getDepartments,
   getDepartment,
@@ -45,4 +45,4 @@ const departmentDepartment = {
   deleteDepartment,
 };
 
-export default departmentDepartment;
+export default departmentService;

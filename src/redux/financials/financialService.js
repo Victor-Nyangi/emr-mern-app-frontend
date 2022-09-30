@@ -37,7 +37,7 @@ const deleteFinancial = async (id) => {
   return data;
 };
 
-const financialFinancial = {
+const financialService = {
   createFinancial,
   getFinancials,
   getFinancial,
@@ -45,4 +45,4 @@ const financialFinancial = {
   deleteFinancial,
 };
 
-export default financialFinancial;
+export default financialService;

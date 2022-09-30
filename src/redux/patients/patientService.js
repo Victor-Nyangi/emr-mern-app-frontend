@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { url } from '../api';
-
+ 
 const getPatients = async () => {
   // const config = {
   //     headers: {
@@ -36,7 +36,7 @@ const deletePatient = async (id) => {
   return data;
 };
 
-const patientPatient = {
+const patientService = {
   createPatient,
   getPatients,
   getPatient,
@@ -44,4 +44,4 @@ const patientPatient = {
   deletePatient,
 };
 
-export default patientPatient;
+export default patientService;

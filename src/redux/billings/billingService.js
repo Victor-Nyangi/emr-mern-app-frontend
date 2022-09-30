@@ -37,7 +37,7 @@ const deleteBilling = async (id) => {
   return data;
 };
 
-const billingBilling = {
+const billingService = {
   createBilling,
   getBillings,
   getBilling,
@@ -45,4 +45,4 @@ const billingBilling = {
   deleteBilling,
 };
 
-export default billingBilling;
+export default billingService;

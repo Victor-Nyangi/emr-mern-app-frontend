@@ -36,7 +36,7 @@ const deleteMember = async (id) => {
   return data;
 };
 
-const memberMember = {
+const memberService = {
   createMember,
   getMembers,
   getMember,
@@ -44,4 +44,4 @@ const memberMember = {
   deleteMember,
 };
 
-export default memberMember;
+export default memberService;
