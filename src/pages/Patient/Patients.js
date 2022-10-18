@@ -4,10 +4,21 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import SectionHeader from "../../components/SectionHeader";
 import moment from 'moment';
+import PaginationComponent from "../../components/PaginationComponent";
 
 const Patients = () => {
   const [status, setStatus] = useState("");
-  
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+// User is currently on this page
+const [currentPage, setCurrentPage] = useState(1);
+// No of Records to be displayed on each page
+const [recordsPerPage] = useState(3);
+
+
+
+
   const dispatch = useDispatch();
   const { patients, isLoading, isError, message } = useSelector(
     (state) => state.patients
@@ -20,10 +31,19 @@ const Patients = () => {
 
     dispatch(getPatients());
 
+    setData(patients);
+    // setLoading(false);
     return () => {
       dispatch(reset());
     };
   }, [isError, message, dispatch]);
+
+  const indexOfLastRecord = currentPage * recordsPerPage;
+  const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+
+  const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
+
+const nPages = Math.ceil(data.length / recordsPerPage)
 
   setTimeout(() => {
     setStatus("");
@@ -36,7 +56,7 @@ const Patients = () => {
   return (
     <>
     <SectionHeader title={'Patient'} main_page={'patient'} data_title={'patients'}/>
-   
+
       <div className="overflow-hidden overflow-x-auto border border-gray-100 rounded">
         <table className="min-w-full text-sm divide-y divide-gray-200">
           <thead>
@@ -76,9 +96,9 @@ const Patients = () => {
           </thead>
           <tbody className="divide-y divide-gray-100">
             {
-              patients && patients.map((patient) => (
+              currentRecords && currentRecords.map((patient) => (
 
-              
+
             <tr key={patient._id}>
               <td className="sticky left-0 px-4 py-2 bg-white">
                 <label className="sr-only" htmlFor="row_1">
@@ -109,7 +129,7 @@ const Patients = () => {
               <td className="px-4 py-2 text-gray-700">
                {patient.blood_group}
               </td>
-             
+
               <td className="px-4 py-2 text-gray-700">
               <Link
                       className="my-6 text-sm"
@@ -133,8 +153,13 @@ const Patients = () => {
           }
           </tbody>
         </table>
+        <PaginationComponent
+    nPages = { nPages }
+    currentPage = { currentPage }
+    setCurrentPage = { setCurrentPage }
+/>
       </div>
-     
+
     </>
   );
 };

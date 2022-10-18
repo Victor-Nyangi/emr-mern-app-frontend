@@ -1,6 +1,6 @@
 import React from 'react'
 import { usePagination, DOTS } from './usePagination';
-
+ 
 const Pagination = props => {
   const {
     onPageChange,
@@ -55,12 +55,12 @@ const Pagination = props => {
             >
               {" "}
               1{" "}
-           
+
           </li>
           <li className="block w-8 h-8 leading-8 text-center text-white bg-blue-600 border-blue-600 rounded-full">
             2
           </li>
-     
+
  {/* {
     pageNumbers.map(number => (
       <li key={number} onClick={() => onChange(number)}
@@ -68,7 +68,7 @@ const Pagination = props => {
       >
         {" "}
         {number}{" "}
-     
+
     </li>
     ))
  } */}
