@@ -4,5 +4,5 @@
 // Heroku Production
 // export const url = 'https://emr-mern-app.herokuapp.com/api/v1/';
 
-// Railway Production
-export const url = 'https://web-production-e127.up.railway.app/api/v1/';
+// Render Production
+export const url = 'https://emr-mern-app-backend-gv.onrender.com/api/v1/';

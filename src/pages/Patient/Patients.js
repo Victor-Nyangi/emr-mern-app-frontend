@@ -7,17 +7,11 @@ import moment from 'moment';
 import PaginationComponent from "../../components/PaginationComponent";
 
 const Patients = () => {
-  const [status, setStatus] = useState("");
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
 
 // User is currently on this page
 const [currentPage, setCurrentPage] = useState(1);
 // No of Records to be displayed on each page
 const [recordsPerPage] = useState(3);
-
-
-
 
   const dispatch = useDispatch();
   const { patients, isLoading, isError, message } = useSelector(
@@ -31,23 +25,25 @@ const [recordsPerPage] = useState(3);
 
     dispatch(getPatients());
 
-    setData(patients);
     // setLoading(false);
     return () => {
       dispatch(reset());
     };
+    // eslint-disable-next-line
   }, [isError, message, dispatch]);
+
+
 
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
 
-  const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
+  const currentRecords = patients.slice(indexOfFirstRecord, indexOfLastRecord);
 
-const nPages = Math.ceil(data.length / recordsPerPage)
+const nPages = Math.ceil(patients.length / recordsPerPage)
 
-  setTimeout(() => {
-    setStatus("");
-  }, 2000);
+  // setTimeout(() => {
+  //   setStatus("");
+  // }, 2000);
 
   if (isLoading) {
     return <p>Loading</p>;

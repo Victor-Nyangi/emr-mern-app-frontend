@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import { BellIcon, MailIcon, DropdownIcon } from "../assets/icons";
+import {  MailIcon, DropdownIcon,   HomeIcon,
+  OutlinePersonIcon,
+  OutlineCogIcon, } from "../assets/icons";
 
 import IconHeader from "../assets/images/HealthX-location.png";
 import { logout, reset } from "../redux/auth/authSlice";
@@ -21,13 +23,13 @@ const Header = () => {
   };
 
   return (
-    <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full mx-4">
-      <div className="relative flex items-center space-between">
+    <div className="px-0 sm:px-4 py-5 mx-auto sm:max-w-xl md:max-w-full mx-4">
+      <div className="relative flex items-center justify-between">
         <a
           href="/"
           aria-label="HealthX"
           title="HealthX"
-          className="inline-flex items-center"
+          className="inline-flex items-center -ml-6"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +49,7 @@ const Header = () => {
             HealthX
           </span>
         </a>
-        <div className="flex-1 grid grid-cols-4 ml-16">
+        <div className="flex-1 grid grid-cols-4  mx-16 hidden sm:inline">
           <div className="relative text-gray-600 focus-within:text-gray-400 col-start-1 col-end-3">
             <span className="absolute inset-y-0 left-0 flex items-center pl-2">
               <button
@@ -78,13 +80,13 @@ const Header = () => {
         <ul className="flex items-center hidden space-x-8 lg:flex">
 
           <li>
-            <button
+            <Link to="channel"
               className="relative align-middle rounded-md focus:outline-none focus:shadow-outline-purple"
               aria-label="Notifications"
               aria-haspopup="true"
             >
               <MailIcon className="w-5 h-5" aria-hidden="true" />
-            </button>
+            </Link>
           </li>
           <li>
             <button
@@ -104,7 +106,7 @@ const Header = () => {
                   <span
                     aria-hidden="true"
                     onClick={onLogout}
-                    className={`absolute p-1 top-10 right-0 inline-block transform bg-gray-300 border-2 border-white rounded  ${
+                    className={`absolute p-1 top-10 right-0 inline-block text-sm text-white transform rounded bg-black border-2 border-white rounded  ${
                       isClicked ? "" : "hidden"
                     }`}
                   >
@@ -148,35 +150,14 @@ const Header = () => {
             </svg>
           </button>
           {isMenuOpen && (
-            <div className="absolute top-0 left-0 w-full">
+            <div className="absolute top-0 z-10 left-0 w-full">
               <div className="p-5 bg-white border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <a
-                      href="/"
-                      aria-label="Company"
-                      title="Company"
-                      className="inline-flex items-center"
-                    >
-                      <svg
-                        className="w-8 text-deep-purple-accent-400"
-                        viewBox="0 0 24 24"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeMiterlimit="10"
-                        stroke="currentColor"
-                        fill="none"
-                      >
-                        <rect x="3" y="1" width="7" height="12" />
-                        <rect x="3" y="17" width="7" height="6" />
-                        <rect x="14" y="1" width="7" height="6" />
-                        <rect x="14" y="11" width="7" height="12" />
-                      </svg>
-                      <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                        Company
-                      </span>
-                    </a>
+                  <div className="flex">
+                  <img src={IconHeader} alt="HealthX location" className="h-7 w-7" />
+          <span className="ml-2 text-xl font-bold tracking-wide text-gray-800">
+            HealthX
+          </span>
                   </div>
                   <div>
                     <button
@@ -195,51 +176,133 @@ const Header = () => {
                   </div>
                 </div>
                 <nav>
-                  <ul className="space-y-4">
-                    <li>
-                      <a
-                        href="/"
-                        aria-label="Our product"
-                        title="Our product"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Product
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/"
-                        aria-label="Our product"
-                        title="Our product"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Features
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/"
-                        aria-label="Product pricing"
-                        title="Product pricing"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Pricing
-                      </a>
-                    </li>
-                    <li>
-                      <button
-                        className="relative align-middle rounded-md focus:outline-none focus:shadow-outline-purple"
-                        aria-label="Notifications"
-                        aria-haspopup="true"
-                      >
-                        <BellIcon className="w-5 h-5" aria-hidden="true" />
-                        <span
-                          aria-hidden="true"
-                          className="absolute top-0 right-0 inline-block w-3 h-3 transform translate-x-1 -translate-y-1 bg-red-600 border-2 border-white rounded-full"
-                        ></span>
-                      </button>
-                    </li>
-                  </ul>
+                <div>
+                  <a
+                    className="w-full text-blue-500 flex items-center my-4 transition-colors duration-200 justify-start"
+                    href="/"
+                  >
+                    <span className="text-left">
+                    <HomeIcon className="w-5 h-5" aria-hidden="true" />
+                    </span>
+                    <span className="mx-4 text-sm font-normal">Dashboard</span>
+                  </a>
+
+                  <a
+                    className="w-full text-dark flex items-center my-4 transition-colors duration-200 justify-start"
+                   href="/dashboard/patients"
+                  >
+                    <span className="text-left">
+                    <OutlinePersonIcon className="w-5 h-5" aria-hidden="true" />
+                    </span>
+                    <span className="mx-4 text-sm font-normal">
+                      Patients
+                    </span>
+
+                  </a>
+                  <a
+                    className="w-full text-dark flex items-center my-4 transition-colors duration-200 justify-start"
+                   href="/dashboard/vitals"
+                  >
+                    <span className="text-left">
+                    <OutlinePersonIcon className="w-5 h-5" aria-hidden="true" />
+                    </span>
+                    <span className="mx-4 text-sm font-normal">
+                      Vitals
+                    </span>
+
+                  </a>
+                  <a
+                    className="w-full text-dark flex items-center my-4 transition-colors duration-200 justify-start"
+                   href="/dashboard/services"
+                  >
+                    <span className="text-left">
+                    <OutlinePersonIcon className="w-5 h-5" aria-hidden="true" />
+                    </span>
+                    <span className="mx-4 text-sm font-normal">
+                      Services
+                    </span>
+
+                  </a>
+                  <a
+                    className="w-full text-dark flex items-center my-4 transition-colors duration-200 justify-start hover:text-blue-500"
+                   href="/dashboard/departments"
+                  >
+                    <span className="text-left">
+                    <OutlinePersonIcon className="w-5 h-5" aria-hidden="true" />
+                    </span>
+                    <span className="mx-4 text-sm font-normal">
+                      Departments
+                    </span>
+                  </a>
+                  <a
+                    className="w-full text-dark flex items-center my-4 transition-colors duration-200 justify-start hover:text-blue-500"
+                   href="/dashboard/drugs"
+                  >
+                    <span className="text-left">
+                    <OutlinePersonIcon className="w-5 h-5" aria-hidden="true" />
+                    </span>
+                    <span className="mx-4 text-sm font-normal">
+                      Drugs
+                    </span>
+                  </a>
+                  <a
+                    className="w-full text-dark flex items-center my-4 transition-colors duration-200 justify-start hover:text-blue-500"
+                   href="/dashboard/medical-staff"
+                  >
+                    <span className="text-left">
+                    <OutlinePersonIcon className="w-5 h-5" aria-hidden="true" />
+                    </span>
+                    <span className="mx-4 text-sm font-normal">
+                      Medical Staff
+                    </span>
+                  </a>
+                  <a
+                    className="w-full text-dark flex items-center my-4 transition-colors duration-200 justify-start hover:text-blue-500"
+                   href="/dashboard/billings"
+                  >
+                    <span className="text-left">
+                    <OutlinePersonIcon className="w-5 h-5" aria-hidden="true" />
+                    </span>
+                    <span className="mx-4 text-sm font-normal">
+                      Billings
+                    </span>
+                  </a>
+                  <a
+                    className="w-full text-dark flex items-center my-4 transition-colors duration-200 justify-start hover:text-green-500 active:text-white active:bg-indigo-900 rounded-r-md"
+                   href="/dashboard/financials"
+                  >
+                    <span className="text-left">
+                    <OutlinePersonIcon className="w-5 h-5" aria-hidden="true" />
+                    </span>
+                    <span className="mx-4 text-sm font-normal">
+                      Financials
+                    </span>
+                    {/* <span
+                aria-hidden="true"
+                className="relative top-0 right-0 inline-block w-2 h-2 bg-red-600 rounded-full"
+              ></span> */}
+                  </a>
+                  <a
+                    className="w-full text-gray-500 flex items-center my-4 transition-colors duration-200 justify-start hover:text-blue-500"
+                    href="/"
+                  >
+                    <span className="text-left">
+                    <OutlineCogIcon className="w-5 h-5" aria-hidden="true" />
+
+                    </span>
+                    <span className="mx-4 text-sm font-normal">Settings</span>
+                  </a>
+                  {/* <a
+                    className="w-full text-gray-500 flex items-center my-4 transition-colors duration-200 justify-start hover:text-blue-500"
+                    href="/"
+                  >
+                    <span className="text-left">
+                    <CartIcon className="w-5 h-5" aria-hidden="true" />
+
+                    </span>
+                    <span className="mx-4 text-sm font-normal">Shop</span>
+                  </a> */}
+                </div>
                 </nav>
               </div>
             </div>

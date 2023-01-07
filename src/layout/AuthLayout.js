@@ -32,6 +32,8 @@ import EditVital from "../pages/Vital/EditVital";
 import CreateFinancial from "../pages/Financial/CreateFinancial";
 import Financials from "../pages/Financial/Financials";
 import EditFinancial from "../pages/Financial/EditFinancial";
+import Board from "../pages/Chat/Board";
+import Channel from "../pages/Chat/Channel";
 import { useSelector, useDispatch } from 'react-redux'
 
 
@@ -98,6 +100,10 @@ const AuthLayout = () => {
                   <Route path="vitals" element={<Vitals />}/>
                   <Route path="/create/vital" element={<CreateVital />}/>
                   <Route path="/edit/vital/:vital_id" element={<EditVital />}/>
+
+                  <Route path="/channel" element={<Channel />}/>
+                  <Route path="/board" element={<Board />}/>
+
                   <Route path="*" element={<NotFound/>}/>
 
 

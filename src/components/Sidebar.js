@@ -4,7 +4,6 @@ import {
   HomeIcon,
   OutlinePersonIcon,
   OutlineCogIcon,
-  // CartIcon,
 } from '../assets/icons'
 
 // import HealthXImage from "../assets/images/HealthX-doctor.png"
