@@ -5,6 +5,7 @@ import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 
 import AuthLayout from "./layout/AuthLayout";
+import Spinner from "./components/Spinner";
 // import NotFound from "./pages/NotFound";
 // const loggedIn = true;
 const App = () => {
@@ -30,7 +31,7 @@ const App = () => {
   }, [user, navigate, isError, message, dispatch])
 
   if (isLoading) {
-    return <p>Loading...</p>
+    return <Spinner />;
   }
 
   return (

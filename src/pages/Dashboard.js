@@ -1,6 +1,7 @@
 import React from "react";
 import Chart from "../assets/features/Chart";
-
+import DataSummary from "../components/DataSummary";
+// import Animelist from "../components/Animelist";
 import {
   ControlsIcon,
   ShareIcon,
@@ -13,10 +14,14 @@ import {
   VideoIcon,
   TimeIcon,
 } from "../assets/icons";
+import TremorChart from "../components/TremorChart";
 
 const Dashboard = () => {
   return (
     <>
+    <h2 className="text-4xl leading-10 font-bold my-3 animate-pulse text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-purple-800">Analytics</h2>
+      {/* <Animelist /> */}
+      <DataSummary />
       <section className="sm:grid sm:grid-cols-7 gap-3 mt-5">
         <div className="container col-span-3 flex-col mx-auto w-full items-center justify-center">
           <div className="py-5 mx-auto">
@@ -81,7 +86,7 @@ const Dashboard = () => {
             </div>
           </div>
           <ul className="flex flex-col">
-          <li className="border-gray-400 flex flex-row space-between mb-2">
+            <li className="border-gray-400 flex flex-row space-between mb-2">
               <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-white rounded-md flex flex-1 items-center p-4">
                 <span
                   aria-hidden="true"
@@ -288,10 +293,10 @@ const Dashboard = () => {
             </li>
           </ul>
           <div className="text-sm my-3 text-gray-400">
-              Yesterday
+            Yesterday
           </div>
           <ul className="flex flex-col">
-          <li className="border-gray-400 flex flex-row space-between mb-2">
+            <li className="border-gray-400 flex flex-row space-between mb-2">
               <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-white rounded-md flex flex-1 items-center p-4">
                 <span
                   aria-hidden="true"
@@ -435,7 +440,7 @@ const Dashboard = () => {
               </span>
               <div className="pl-1 md:mr-">
                 <div className="text-gray-600 text-xs flex items-center">
-                <TimeIcon className="w-2 h-2 mr-2" aria-hidden="true" /> 2:32 hours spent
+                  <TimeIcon className="w-2 h-2 mr-2" aria-hidden="true" /> 2:32 hours spent
                   <span>
                     <a href="/" className="text-xs text-indigo-700 font-medium ml-2">
                       See Time Logs
@@ -450,23 +455,23 @@ const Dashboard = () => {
                 <div className="flex text-between text-right items-center">
                   <MessageIcon className="w-7 h-7 mr-2" aria-hidden="true" />
                   <VideoIcon className="w-7 h-7 mr-2" aria-hidden="true" />
-                    <a
-                      href="/"
-                      className="text-xs inline-flex items-center justify-center h-8 px-2 mr-3 border border-gray-400 font-medium tracking-wide text-dark transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                      aria-label="Filter"
-                      title="Filter"
-                    >
-                      Vital Logs
-                    </a>
-                    <a
-                      href="/"
-                      className="text-xs inline-flex items-center justify-center h-8 px-2 border border-gray-400 font-medium tracking-wide text-dark transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                      aria-label="Export"
-                      title="Export"
-                    >
-                      Assign
-                      <OutlineCogIcon className="w-4 h-4 ml-2" aria-hidden="true" />
-                    </a>
+                  <a
+                    href="/"
+                    className="text-xs inline-flex items-center justify-center h-8 px-2 mr-3 border border-gray-400 font-medium tracking-wide text-dark transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                    aria-label="Filter"
+                    title="Filter"
+                  >
+                    Vital Logs
+                  </a>
+                  <a
+                    href="/"
+                    className="text-xs inline-flex items-center justify-center h-8 px-2 border border-gray-400 font-medium tracking-wide text-dark transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                    aria-label="Export"
+                    title="Export"
+                  >
+                    Assign
+                    <OutlineCogIcon className="w-4 h-4 ml-2" aria-hidden="true" />
+                  </a>
                 </div>
                 <div className="text-gray-600 text-right text-xs mt-2">
                   Assign on Nov 23, 19
@@ -477,50 +482,50 @@ const Dashboard = () => {
               <div className="grid gap-4 sm:grid-cols-2">
 
                 <div className="pl-1 md:mr-1">
-                <div className="text-gray-600 text-xs font-medium flex items-center">
-                <HeartIcon className="w-5 h-5 mr-2" aria-hidden="true" /> Blood Pressure
-                </div>
-                <div className="text-gray-400 text-xs flex items-center">
-                  Assigned 7 days ago</div>
-                <div className="text-red-600 text-xl font-bold mt-2">120/80</div>
-                <div className="text-gray-400 text-xs flex items-center">
-                  5 hours ago</div>
+                  <div className="text-gray-600 text-xs font-medium flex items-center">
+                    <HeartIcon className="w-5 h-5 mr-2" aria-hidden="true" /> Blood Pressure
+                  </div>
                   <div className="text-gray-400 text-xs flex items-center">
-                 May 23 09:00 AM</div>
-              </div>
-              <div className="pl-1 md:mr-1">
-                <div className="text-gray-600 text-xs font-medium flex items-center">
-                <HeartBeatIcon className="w-5 h-5 mr-2" aria-hidden="true" /> Heart Beat
+                    Assigned 7 days ago</div>
+                  <div className="text-red-600 text-xl font-bold mt-2">120/80</div>
+                  <div className="text-gray-400 text-xs flex items-center">
+                    5 hours ago</div>
+                  <div className="text-gray-400 text-xs flex items-center">
+                    May 23 09:00 AM</div>
                 </div>
-                <div className="text-gray-400 text-xs flex items-center">
-                  Assigned 7 days ago</div>
-                <div className="text-green-600 text-xl font-bold mt-2">76</div>
-                <div className="text-gray-400 text-xs flex items-center">
-                  4 days ago</div>
-              </div>
-              <div className="pl-1 md:mr-1">
-                <div className="text-gray-600 text-xs font-medium flex items-center">
-                <RadioIcon className="w-5 h-5 mr-2" aria-hidden="true" /> Weight
+                <div className="pl-1 md:mr-1">
+                  <div className="text-gray-600 text-xs font-medium flex items-center">
+                    <HeartBeatIcon className="w-5 h-5 mr-2" aria-hidden="true" /> Heart Beat
+                  </div>
+                  <div className="text-gray-400 text-xs flex items-center">
+                    Assigned 7 days ago</div>
+                  <div className="text-green-600 text-xl font-bold mt-2">76</div>
+                  <div className="text-gray-400 text-xs flex items-center">
+                    4 days ago</div>
                 </div>
-                <div className="text-gray-400 text-xs flex items-center">
-                  Assigned 12 days ago</div>
-                <div className="text-gray-400 text-md mt-3">Waiting</div>
-              </div>
-              <div className="pl-1 md:mr-1">
-                <div className="text-gray-600 text-xs font-medium flex items-center">
-                <DropIcon className="w-5 h-5 mr-2" aria-hidden="true" /> Blood Glucose
+                <div className="pl-1 md:mr-1">
+                  <div className="text-gray-600 text-xs font-medium flex items-center">
+                    <RadioIcon className="w-5 h-5 mr-2" aria-hidden="true" /> Weight
+                  </div>
+                  <div className="text-gray-400 text-xs flex items-center">
+                    Assigned 12 days ago</div>
+                  <div className="text-gray-400 text-md mt-3">Waiting</div>
                 </div>
-                <div className="text-gray-400 text-xs flex items-center">
-                  Assigned 2 days ago</div>
-                <div className="text-gray-400 text-md mt-3">Waiting</div>
-              </div>
+                <div className="pl-1 md:mr-1">
+                  <div className="text-gray-600 text-xs font-medium flex items-center">
+                    <DropIcon className="w-5 h-5 mr-2" aria-hidden="true" /> Blood Glucose
+                  </div>
+                  <div className="text-gray-400 text-xs flex items-center">
+                    Assigned 2 days ago</div>
+                  <div className="text-gray-400 text-md mt-3">Waiting</div>
+                </div>
               </div>
             </div>
           </div>
           <div>
             <div className="min-w-0 p-4 bg-white rounded-lg shadow-xs">
-
-              <Chart />
+              <TremorChart />
+              {/* <Chart /> */}
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@ import {
   OutlineCogIcon,
 } from '../assets/icons'
 
-// import HealthXImage from "../assets/images/HealthX-doctor.png"
+// import LifeOfHealthImage from "../assets/images/LifeOfHealth-doctor.png"
 
 const Sidebar = () => {
     return (
@@ -144,7 +144,7 @@ const Sidebar = () => {
                   </a> */}
                 </div>
               </nav>
-              {/* <img src={HealthXImage} className="mt-20 max-w-full" alt="HealthX doctor"/> */}
+              {/* <img src={LifeOfHealthImage} className="mt-20 max-w-full" alt="LifeOfHealth doctor"/> */}
 
             </div>
 

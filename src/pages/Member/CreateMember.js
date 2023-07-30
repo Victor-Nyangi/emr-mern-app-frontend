@@ -5,6 +5,7 @@ import { getMembers, reset } from "../../redux/members/memberSlice";
 
 import { createMember } from "../../redux/members/memberSlice";
 import PageTitle from "../../components/PageTitle";
+import Spinner from "../../components/Spinner";
 
 const CreateMember = () => {
   const [memberData, setMemberData] = useState({
@@ -75,7 +76,7 @@ const CreateMember = () => {
   };
 
   if (isLoading) {
-    return <p>Loading</p>;
+    return <Spinner />;
   }
 
   return (

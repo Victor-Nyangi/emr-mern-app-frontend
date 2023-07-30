@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getDepartments, reset } from "../../redux/departments/departmentSlice";
 import SectionHeader from "../../components/SectionHeader";
 import { Link } from "react-router-dom";
+import Spinner from "../../components/Spinner";
 
 const Departments = () => {
   // const [totalResults, setTotalResults] = useState(0);
@@ -41,7 +42,7 @@ const Departments = () => {
   }, 2000);
 
   if (isLoading) {
-    return <p>Loading</p>;
+    return <Spinner />;
   }
 
   return (

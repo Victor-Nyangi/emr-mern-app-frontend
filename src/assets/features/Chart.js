@@ -203,7 +203,7 @@ const Chart = () => {
       />
     </LineChart>
         </div>
-        
+
     )
 }
 

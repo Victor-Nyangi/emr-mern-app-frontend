@@ -6,13 +6,14 @@ import moment from 'moment';
 import SectionHeader from "../../components/SectionHeader";
 // import Pagination from "../../components/Pagination";
 import { Link } from "react-router-dom";
+import Spinner from "../../components/Spinner";
 // let PageSize = 10;
 
 const Billings = () => {
   // const [currentPage, setCurrentPage] = useState(1);
   // const [currentTableData, setTableData] = useState([])
   const [status, setStatus] = useState("");
-  
+
   // const onPageChangeTable = (p) => {
   //   setPageTable(p);
   // };
@@ -30,7 +31,7 @@ const Billings = () => {
     // if (!user) {
     //   navigate('/login')
     // }
-    
+
     dispatch(getBillings());
     // updateBillings(billings)
 
@@ -59,7 +60,7 @@ const Billings = () => {
   }, 2000);
 
   if (isLoading) {
-    return <p>Loading</p>;
+    return <Spinner />;
   }
 
   return (

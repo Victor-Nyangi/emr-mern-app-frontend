@@ -5,10 +5,11 @@ import SectionHeader from "../../components/SectionHeader";
 import { useSelector, useDispatch } from "react-redux";
 import moment from 'moment'
 import { Link } from "react-router-dom";
+import Spinner from "../../components/Spinner";
 
 const Financials = () => {
   const [status, setStatus] = useState("");
-  
+
   const dispatch = useDispatch();
   const { financials, isLoading, isError, message } = useSelector(
     (state) => state.financials
@@ -31,7 +32,7 @@ const Financials = () => {
   }, 2000);
 
   if (isLoading) {
-    return <p>Loading</p>;
+    return <Spinner />;
   }
 
   return (
@@ -126,7 +127,7 @@ const Financials = () => {
             </tbody>
           </table>
         </div>
-        
+
       </section>
     </>
   );

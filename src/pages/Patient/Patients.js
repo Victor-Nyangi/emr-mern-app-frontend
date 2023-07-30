@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import SectionHeader from "../../components/SectionHeader";
 import moment from 'moment';
 import PaginationComponent from "../../components/PaginationComponent";
+import Spinner from "../../components/Spinner";
 
 const Patients = () => {
 
@@ -46,7 +47,7 @@ const nPages = Math.ceil(patients.length / recordsPerPage)
   // }, 2000);
 
   if (isLoading) {
-    return <p>Loading</p>;
+    return <Spinner />;
   }
 
   return (
