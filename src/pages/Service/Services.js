@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import SectionHeader from "../../components/SectionHeader";
 import Pagination from "../../components/Pagination";
 import { getServices, reset } from "../../redux/services/serviceSlice";
+import Spinner from "../../components/Spinner";
 
 const Services = () => {
   // const [totalResults, setTotalResults] = useState(0);
@@ -73,7 +74,7 @@ const Services = () => {
   }, 2000);
 
   if (isLoading) {
-    return <p>Loading</p>;
+    return <Spinner />;
   }
 
   return (

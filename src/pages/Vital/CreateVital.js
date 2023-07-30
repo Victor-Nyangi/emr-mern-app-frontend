@@ -6,6 +6,7 @@ import { createVital } from "../../redux/vitals/vitalSlice";
 import { getPatients, reset } from "../../redux/patients/patientSlice";
 
 import PageTitle from "../../components/PageTitle";
+import Spinner from "../../components/Spinner";
 
 const CreateVital = () => {
   const [vitalData, setVitalData] = useState({
@@ -73,7 +74,7 @@ const CreateVital = () => {
   };
 
   if (isLoading) {
-    return <p>Loading</p>;
+    return <Spinner />;
   }
 
   return (

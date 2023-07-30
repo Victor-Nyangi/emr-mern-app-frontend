@@ -6,7 +6,7 @@ import {  MailIcon, DropdownIcon,   HomeIcon,
   OutlinePersonIcon,
   OutlineCogIcon, } from "../assets/icons";
 
-import IconHeader from "../assets/images/HealthX-location.png";
+import IconHeader from "../assets/images/LifeOfHealth-location.png";
 import { logout, reset } from "../redux/auth/authSlice";
 
 const Header = () => {
@@ -27,8 +27,8 @@ const Header = () => {
       <div className="relative flex items-center justify-between">
         <a
           href="/"
-          aria-label="HealthX"
-          title="HealthX"
+          aria-label="LifeOfHealth"
+          title="LifeOfHealth"
           className="inline-flex items-center -ml-6"
         >
           <svg
@@ -44,9 +44,9 @@ const Header = () => {
               d="M4 6h16M4 12h16M4 18h16"
             ></path>
           </svg>
-          <img src={IconHeader} alt="HealthX location" className="h-7 w-7" />
+          <img src={IconHeader} alt="LifeOfHealth location" className="h-7 w-7" />
           <span className="ml-2 text-xl font-bold tracking-wide text-gray-800">
-            HealthX
+            LifeOfHealth
           </span>
         </a>
         <div className="flex-1 grid grid-cols-4  mx-16 hidden sm:inline">
@@ -154,9 +154,9 @@ const Header = () => {
               <div className="p-5 bg-white border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex">
-                  <img src={IconHeader} alt="HealthX location" className="h-7 w-7" />
+                  <img src={IconHeader} alt="LifeOfHealth location" className="h-7 w-7" />
           <span className="ml-2 text-xl font-bold tracking-wide text-gray-800">
-            HealthX
+            LifeOfHealth
           </span>
                   </div>
                   <div>

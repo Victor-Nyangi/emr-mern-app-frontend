@@ -4,10 +4,11 @@ import { useSelector, useDispatch } from "react-redux";
 import SectionHeader from "../../components/SectionHeader";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import Spinner from "../../components/Spinner";
 
 const Members = () => {
   const [status, setStatus] = useState("");
-  
+
   const dispatch = useDispatch();
   const { members, isLoading, isError, message } = useSelector(
     (state) => state.members
@@ -30,13 +31,13 @@ const Members = () => {
   }, 2000);
 
   if (isLoading) {
-    return <p>Loading</p>;
+    return <Spinner />;
   }
 
 
   return (
     <>
-   
+
       <SectionHeader
         title={"Staff"}
         main_page={"medical-staff"}
@@ -132,7 +133,7 @@ const Members = () => {
           </tbody>
         </table>
       </div>
-      
+
     </>
   );
 };

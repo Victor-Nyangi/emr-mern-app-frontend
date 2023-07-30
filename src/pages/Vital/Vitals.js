@@ -3,10 +3,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { getVitals, reset } from "../../redux/vitals/vitalSlice";
 import SectionHeader from '../../components/SectionHeader';
 import { Link } from 'react-router-dom';
+import Spinner from '../../components/Spinner';
 
 const Vitals = ({fetchVitals}) => {
   const [status, setStatus] = useState("");
-  
+
   const dispatch = useDispatch();
   const { vitals, isLoading, isError, message } = useSelector(
     (state) => state.vitals
@@ -29,7 +30,7 @@ const Vitals = ({fetchVitals}) => {
   }, 2000);
 
   if (isLoading) {
-    return <p>Loading</p>;
+    return <Spinner />;
   }
 
   return (
@@ -79,7 +80,7 @@ const Vitals = ({fetchVitals}) => {
             {
               vitals && vitals.map((vital) => (
 
-              
+
             <tr>
               <td className="sticky left-0 px-4 py-2 bg-white">
                 <label className="sr-only" htmlFor="row_1">
@@ -103,7 +104,7 @@ const Vitals = ({fetchVitals}) => {
               <td className="px-4 py-2 text-gray-700">
               {vital?.blood_pressure}
               </td>
-              
+
               <td className="px-4 py-2 text-gray-700">
                 {vital?.weight}
               </td>
@@ -113,7 +114,7 @@ const Vitals = ({fetchVitals}) => {
               <td className="px-4 py-2 text-gray-700">
                {vital?.health_status}
               </td>
-             
+
               <td className="px-4 py-2 text-gray-700">
               <Link
                       className="my-6 text-sm"

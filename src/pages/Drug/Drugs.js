@@ -5,6 +5,7 @@ import SectionHeader from "../../components/SectionHeader";
 import { Link } from "react-router-dom";
 import { getDrugs, reset } from "../../redux/drugs/drugSlice";
 import moment from "moment";
+import Spinner from "../../components/Spinner";
 
 const Drugs = () => {
   // const [totalResults, setTotalResults] = useState(0);
@@ -43,7 +44,7 @@ const Drugs = () => {
   }, 2000);
 
   if (isLoading) {
-    return <p>Loading</p>;
+    return <Spinner />;
   }
 
   return (
@@ -131,7 +132,7 @@ const Drugs = () => {
             </tbody>
           </table>
         </div>
-      
+
       </section>
     </>
   );

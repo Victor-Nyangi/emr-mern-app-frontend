@@ -35,6 +35,7 @@ import EditFinancial from "../pages/Financial/EditFinancial";
 import Board from "../pages/Chat/Board";
 import Channel from "../pages/Chat/Channel";
 import { useSelector, useDispatch } from 'react-redux'
+import Spinner from "../components/Spinner";
 
 
 const AuthLayout = () => {
@@ -55,7 +56,7 @@ const AuthLayout = () => {
   }, [user, navigate, isError, message, dispatch])
 
   if (isLoading) {
-    return <p>Loading...</p>
+    return <Spinner />
   }
 
   return (

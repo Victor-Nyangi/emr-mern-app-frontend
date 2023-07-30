@@ -6,6 +6,7 @@ import { getPatients, reset } from "../../redux/patients/patientSlice";
 import { getServices } from "../../redux/services/serviceSlice";
 
 import PageTitle from "../../components/PageTitle";
+import Spinner from "../../components/Spinner";
 
 const CreateBilling = () => {
   const [billingData, setBillingData] = useState({
@@ -70,7 +71,7 @@ const CreateBilling = () => {
   };
 
   if (isLoading) {
-    return <p>Loading</p>;
+    return <Spinner />;
   }
 
   return (

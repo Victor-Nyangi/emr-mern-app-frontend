@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { register, reset } from "../../redux/auth/authSlice";
 import MainPage from "../../components/MainPage.jpg"
+import Spinner from "../../components/Spinner";
 
 
 const Register = () => {
@@ -64,7 +65,7 @@ const Register = () => {
   };
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Spinner />;
   }
 
   return (
@@ -100,7 +101,7 @@ const Register = () => {
                   <rect x="14" y="11" width="7" height="12" />
                 </svg>
                 <span className="ml-2 text-xl font-bold tracking-wide text-gray-200 uppercase">
-                  Health X
+                Life of health
                 </span>
               </a>
             </div>
@@ -110,7 +111,7 @@ const Register = () => {
             <div className="flex flex-col items-center justify-between xl:flex-row">
               <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
                 <h1 className="max-w-lg mb-6 font-sans text-4xl  font-bold text-red-600 ">
-                  Electonic
+                  Electronic
                   <br className="hidden md:block" />
                   Management{" "}
                   <span className="text-teal-accent-400">Records</span>

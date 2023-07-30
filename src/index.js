@@ -1,34 +1,31 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
+import { createRoot } from 'react-dom/client';
 import './index.css';
-import {
-  BrowserRouter as Router
-} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import App from './App';
 import { Provider } from 'react-redux';
-// import { createStore, applyMiddleware, compose } from 'redux';
-
 import { store } from './redux/store';
-// import { configureStore } from '@reduxjs/toolkit';
-// import thunk from 'redux-thunk';
-// import rootReducer from './redux/reducers';
 import reportWebVitals from './reportWebVitals';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
-// import { store } from './redux/store'
-// const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
+const client = new ApolloClient({
+  uri: 'http://localhost:4000/graphql',
+  cache: new InMemoryCache(),
+})
 
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = createRoot(container);
+
+root.render(
   <React.StrictMode>
-  <Router>
-  <Provider store={store}>
-    <App />
-  </Provider>
-         </Router>
+    <ApolloProvider client={client}>
+      <Router>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </Router>
+    </ApolloProvider>
   </React.StrictMode>
-
-  ,
-  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { createFinancial } from "../../redux/financials/financialSlice";
 import { getPatients, reset } from "../../redux/patients/patientSlice";
 import PageTitle from "../../components/PageTitle";
+import Spinner from "../../components/Spinner";
 
 const CreateFinancial = () => {
   const [financialData, setFinancialData] = useState({
@@ -64,7 +65,7 @@ const CreateFinancial = () => {
   };
 
   if (isLoading) {
-    return <p>Loading</p>;
+    return <Spinner />;
   }
 
   return (
